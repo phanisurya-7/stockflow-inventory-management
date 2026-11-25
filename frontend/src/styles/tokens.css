@@ -8,9 +8,10 @@
   --color-bg-surface: #ffffff;
   --color-bg-subtle: #f2ede3;
 
-  /* Navigation */
+  /* Navigation & Brand Rail */
   --color-nav-bg: #0f1e36;
   --color-nav-surface: #172a46;
+  --color-nav-border: rgba(247, 245, 240, 0.14);
   --color-nav-text: #f7f5f0;
   --color-nav-muted: #9eb0c7;
 
@@ -25,13 +26,19 @@
   --color-ink-secondary: #4e596b;
   --color-ink-muted: #7a8394;
 
-  /* Borders */
+  /* Borders & Focus */
   --color-border-hairline: #e6e0d4;
   --color-border-strong: #cfc7b8;
+  --color-focus-ring: rgba(15, 30, 54, 0.18);
+
+  /* Feedback */
+  --color-error-bg: #fdf3f2;
+  --color-error-border: #e6b8b3;
+  --color-error-text: #9b2c25;
 
   /* Typography Scale */
-  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-display: "Georgia", "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Newsreader", "Georgia", "Times New Roman", serif;
   --font-mono: "JetBrains Mono", "Cascadia Code", ui-monospace, monospace;
 
   /* Spacing & Radii */
@@ -40,7 +47,7 @@
   --radius-lg: 16px;
   --radius-pill: 9999px;
 
-  --shadow-subtle: 0 1px 2px rgba(15, 30, 54, 0.05);
+  --shadow-subtle: 0 1px 2px rgba(15, 30, 54, 0.04), 0 12px 32px rgba(15, 30, 54, 0.04);
 }
 
 *,
@@ -57,4 +64,9 @@ body {
   color: var(--color-ink-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
 }
