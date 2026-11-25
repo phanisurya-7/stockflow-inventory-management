@@ -35,6 +35,9 @@
   --color-error-bg: #fdf3f2;
   --color-error-border: #e6b8b3;
   --color-error-text: #9b2c25;
+  --color-warn-bg: #fef7e6;
+  --color-warn-border: #ead29c;
+  --color-warn-text: #824d00;
 
   /* Typography Scale */
   --font-sans: "Plus Jakarta Sans", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -67,6 +70,7 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font-family: inherit;
 }

@@ -18,6 +18,17 @@ def _parse_csv_env(name: str, default: str) -> list[str]:
     return [item.strip() for item in raw.split(",") if item.strip()]
 
 
+def _parse_non_negative_int(name: str, default: int) -> int:
+    raw = os.getenv(name)
+    if raw is None or not raw.strip():
+        return default
+    try:
+        parsed = int(raw.strip())
+    except ValueError:
+        return default
+    return parsed if parsed >= 0 else default
+
+
 SECRET_KEY = os.getenv(
     "DJANGO_SECRET_KEY",
     "django-insecure-local-dev-placeholder-change-in-env",
@@ -37,6 +48,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",
     "accounts",
+    "inventory",
 ]
 
 MIDDLEWARE = [
@@ -111,6 +123,8 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+DEFAULT_LOW_STOCK_THRESHOLD = _parse_non_negative_int("DEFAULT_LOW_STOCK_THRESHOLD", 5)
 
 CORS_ALLOWED_ORIGINS = _parse_csv_env(
     "CORS_ALLOWED_ORIGINS",
