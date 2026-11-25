@@ -1,11 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://stockflow-backend-a1uo.onrender.com/api/:path*"
+      "source": "/api/(.*)",
+      "destination": "https://stockflow-backend-a1uo.onrender.com/api/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ]
